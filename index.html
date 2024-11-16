@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Layout</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .box {
+      padding: 15px;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      grid-template-rows: repeat(8, 1fr);
+      gap: 10px;
+    }
+    .items {
+      border: 1px solid black;
+      text-align: center;
+      padding: 10px;
+    }
+    .items:nth-child(1) {
+      grid-column: 1 / -1;
+      grid-row: 1 / span 1;
+    }
+    .items:nth-child(2) {
+      grid-column: 1 / -1;
+      grid-row: 2 / span 1;
+    }
+    .items:nth-child(3) {
+      grid-column: 1 / span 1;
+      grid-row: 3 / span 4;
+    }
+    .items:nth-child(4) {
+      grid-column: 2 / span 5;
+      grid-row: 3 / span 4;
+    }
+    .items:nth-child(5) {
+      grid-column: 7 / span 1;
+      grid-row: 3 / span 4;
+    }
+    .items:nth-child(6) {
+      grid-column: 1 / -1;
+      grid-row: 7 / span 1;
+    }
+
+    
+    @media screen and (max-width: 700px) {
+      .box{
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(9, 1fr);
+      }
+      .items:nth-child(5) {
+        grid-column: 1 / -1; 
+        grid-row: 7 / span 1;
+      }
+
+      .items:nth-child(6) {
+        grid-column: 1 / -1;
+        grid-row: 8 / span 1;
+      }
+
+      .items:nth-child(4) {
+        grid-column: 2 / -1;
+        grid-row: 3 / span 4;
+      }
+    }
+
+
+
+
+
+
+
+    
+    @media screen and (max-width: 400px) {
+      .box {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(10, 1fr);
+      }
+      .items:nth-child(5) {
+        grid-column: 1 / -1; 
+        grid-row: 8 / span 1;
+      }
+    
+      .items:nth-child(6) {
+        grid-column: 1 / -1;
+        grid-row: 9 / span 1;
+      }
+    
+      .items:nth-child(4) {
+        grid-column: 1 / -1;
+        grid-row: 3 / span 4;
+      }
+
+      .items:nth-child(3) {
+        grid-column: 1 / -1;
+        grid-row:  7/ span 1;
+      }
+    }
+    
+
+    
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="items">Header</div>
+    <div class="items">Navigation menu</div>
+    <div class="items">Content</div>
+    <div class="items">Main Content</div>
+    <div class="items">Content</div>
+    <div class="items">Footer</div>
+  </div>
+</body>
+</html>

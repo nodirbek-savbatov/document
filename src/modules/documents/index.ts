@@ -1,0 +1,6 @@
+export * from "./documents.controller"
+export * from "./documents.module"
+export * from "./documents.service"
+export * from "./dto"
+export * from "./entities"
+export * from "./interfaces"
